@@ -106,6 +106,9 @@ class Foreman:
 
 		return self.prefix == self.block_prefix.upper()
 	
+	def get_version(self, string):
+		return string if re.match(r"^v\d{3}$", string) else None
+	
 	def has_version(self):
 		if not self.block_versioned:
 			return None
@@ -119,7 +122,10 @@ class Foreman:
 	def get_parts(self):
 		parts = self.block_name.split("_")
 		prefix = parts.pop(0) if self.block_prefix else None
-		version = None if not self.block_versioned else parts.pop(-1)
+		version = None
+		if self.block_versioned:
+			if parts and re.match(r"^v\d{3}$", parts[-1]):
+				version = parts.pop(-1)
 		name = "_".join(parts)
 
 		return prefix, name, version
