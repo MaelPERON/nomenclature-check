@@ -4,7 +4,7 @@
 | armature         | ARM    | ARM_characterRig_v003           | True      |             | camelCase  | ✓          |
 | environnement    | ENV    | ENV_montagneModeling_v004       | True      |             | camelCase  |            |
 | fx               | FX     | None                            |           |             | camelCase  |            |
-| image            | IMG    | IMG_coastSandRocks_diff_2k      |           |             | camelCase_<type>_<n digit>k  | ✓          |
+| image            | IMG    | IMG_coastSandRocks_diff_2k      |           |             | camelCase_\<type\>_\<n digit\>k  | ✓          |
 | lattice          | LAT    | LAT_facialDeform                |           |             | camelCase  | ✓          |
 | library          | LIB    | LIB_matLibShading               |           |             | camelCase  | ✓          |
 | mesh             | MSH    | MSH_buildingWalls               |           |             | camelCase  | ✓          |
