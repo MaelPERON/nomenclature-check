@@ -22,7 +22,8 @@ ASSET_RULES = {
 	},
 	"image": {
 		"prefix": "IMG",
-		"example": "IMG_diffuseBrick2k.jpg"
+		"example": "IMG_diffuse-Brick-2k.jpg",
+		"ignore_case": True
 	},
 	"lattice": {
 		"prefix": "LAT",
@@ -97,7 +98,8 @@ class Foreman:
 		self.rules = rules
 		self.block_prefix = self.rules.get(block_type, {}).get("prefix", None)
 		self.block_versioned = self.rules.get(block_type, {}).get("versioned", False)
-		
+		self.ignore_case = self.rules.get(block_type, {}).get("ignore_case", False)
+
 		self.prefix, self.name, self.version = self.get_parts()
 
 	def has_prefix(self):
@@ -132,6 +134,8 @@ class Foreman:
 	
 	def is_case_valid(self):
 		case_pattern = r"^[a-zA-Z]+([A-Z][a-z]+)+$"
+		if self.ignore_case:
+			return True
 		return bool(re.match(case_pattern, self.name))
 	
 	def is_valid(self,quiet=True) -> bool | tuple[bool, dict]:
