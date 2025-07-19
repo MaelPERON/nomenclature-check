@@ -139,7 +139,7 @@ class Foreman:
 
 		has_version = self.has_version()
 		if has_version is not None and not has_version:
-			errors["version"] = f"Expected version format 'v###' but got '{self.version or "None"}'." if self.version else "Version is required for this block type."
+			errors["version"] = f"Expected version format 'v###' but got '{self.version or 'None'}'." if self.version else "Version is required for this block type."
 
 		if not self.is_case_valid():
 			errors["case"] = f"Block name '{self.block_name}' does not follow the case convention."
