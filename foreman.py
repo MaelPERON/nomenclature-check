@@ -146,3 +146,11 @@ class Foreman:
 
 		is_valid = bool(errors)
 		return is_valid if quiet else is_valid, errors
+	
+	def list_errors(self):
+		is_valid, errors = self.is_valid(quiet=False)
+		if is_valid:
+			return "No errors found."
+		else:
+			error_messages = [f"{key}: {value}" for key, value in errors.items()]
+			return "\n".join(error_messages)
