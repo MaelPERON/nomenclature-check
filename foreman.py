@@ -144,7 +144,7 @@ class Foreman:
 		if not self.is_case_valid():
 			errors["case"] = f"Block name '{self.block_name}' does not follow the case convention."
 
-		is_valid = bool(errors)
+		is_valid = not bool(errors)
 		return is_valid if quiet else is_valid, errors
 	
 	def list_errors(self):
