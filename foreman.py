@@ -22,7 +22,7 @@ ASSET_RULES = {
 	},
 	"image": {
 		"prefix": "IMG",
-		"example": "IMG_diffuse-Brick-2k.jpg",
+		"example": "IMG_coastSandRocks_diff_2k",
 		"ignore_case": True
 	},
 	"lattice": {
