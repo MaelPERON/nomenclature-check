@@ -96,3 +96,9 @@ class Foreman:
 		self.block_versioned = ASSET_RULES.get(block_type, {}).get("versioned", False)
 		
 		self.prefix, self.name, self.version = self.get_parts()
+
+	def has_prefix(self):
+		if not self.block_prefix:
+			return None			
+
+		return self.prefix == self.block_prefix.upper()
