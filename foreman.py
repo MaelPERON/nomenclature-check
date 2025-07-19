@@ -123,3 +123,7 @@ class Foreman:
 		name = "_".join(parts)
 
 		return prefix, name, version
+	
+	def is_case_valid(self):
+		case_pattern = r"^[a-zA-Z]+([A-Z][a-z]+)+$"
+		return bool(re.match(case_pattern, self.name))
