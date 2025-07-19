@@ -89,11 +89,12 @@ ASSET_RULES = {
 }
 
 class Foreman:
-	def __init__(self, block_name: str, block_type: str):
+	def __init__(self, block_name: str, block_type: str, rules: dict = ASSET_RULES):
 		self.block_name = block_name
 		self.block_type = block_type
-		self.block_prefix = ASSET_RULES.get(block_type, {}).get("prefix", None)
-		self.block_versioned = ASSET_RULES.get(block_type, {}).get("versioned", False)
+		self.rules = rules
+		self.block_prefix = self.rules.get(block_type, {}).get("prefix", None)
+		self.block_versioned = self.rules.get(block_type, {}).get("versioned", False)
 		
 		self.prefix, self.name, self.version = self.get_parts()
 
