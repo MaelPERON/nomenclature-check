@@ -87,3 +87,12 @@ ASSET_RULES = {
         "versioned": True
     }
 }
+
+class Foreman:
+	def __init__(self, block_name: str, block_type: str):
+		self.block_name = block_name
+		self.block_type = block_type
+		self.block_prefix = ASSET_RULES.get(block_type, {}).get("prefix", None)
+		self.block_versioned = ASSET_RULES.get(block_type, {}).get("versioned", False)
+		
+		self.prefix, self.name, self.versioned = self.get_parts()
