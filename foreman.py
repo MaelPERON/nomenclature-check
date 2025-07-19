@@ -50,7 +50,7 @@ ASSET_RULES = {
 		"example": "MTA_bipedStandard"
 	},
 	"node_graph": {
-		"prefix": "ND",
+		"prefix": "NOD",
 		"example": "NOD_renderSetup"
 	},
 	"palette": {

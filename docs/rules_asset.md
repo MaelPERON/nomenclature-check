@@ -11,7 +11,7 @@
 | mask             | MSK    | MSK_selectionHair               |           |             | camelCase  |            |
 | material         | MTL    | MTL_leatherWorn                 |           |             | camelCase  | ✓          |
 | metarig          | MTA    | MTA_bipedStandard               |           |             | camelCase  |            |
-| node_graph       | ND     | NOD_renderSetup                 |           |             | camelCase  |            |
+| node_graph       | NOD    | NOD_renderSetup                 |           |             | camelCase  |            |
 | palette          | PLT    | PLT_characterColors             |           |             | camelCase  |            |
 | script           | SCT    | SCT_autoBake_v001.py            | True      |             | camelCase  |            |
 | simulation       | SIM    | None                            |           |             | camelCase  |            |
