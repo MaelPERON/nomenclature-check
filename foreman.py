@@ -1,3 +1,5 @@
+import re
+
 ASSET_RULES = {
     "action": {
         "prefix": "ATN",
@@ -103,6 +105,16 @@ class Foreman:
 			return None			
 
 		return self.prefix == self.block_prefix.upper()
+	
+	def has_version(self):
+		if not self.block_versioned:
+			return None
+
+		if not self.version:
+			return False
+		
+		version_pattern = r"^v\d{3}$"
+		return bool(re.match(version_pattern, self.version))
 
 	def get_parts(self):
 		parts = self.block_name.split("_")
