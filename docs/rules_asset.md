@@ -1,22 +1,22 @@
-| Type              | Prefix | Example                        | Versioned |
-|-------------------|--------|--------------------------------|-----------|
-| action           | ATN    | ATN_walk_cycle_v003           | True      |
-| armature         | ARM    | ARM_character_rig_v003        | True      |
-| environnement    | ENV    | ENV_montagne_modeling_v004    | True      |
-| fx               | FX     | None                          |           |
-| image            | IMG    | IMG_diffuse_brick_2k.jpg      |           |
-| lattice          | LAT    | LAT_facialDeform              |           |
-| library          | LIB    | LIB_matLib_shading            |           |
-| mesh             | MSH    | MSH_building_walls            |           |
-| mask             | MSK    | MSK_selection_hair            |           |
-| material         | MTL    | MTL_leather_worn              |           |
-| metarig          | MTA    | MTA_biped_standard            |           |
-| node_graph       | ND     | NOD_renderSetup               |           |
-| palette          | PLT    | PLT_character_colors          |           |
-| script           | SCT    | SCT_autoBake_v001.py          | True      |
-| simulation       | SIM    | None                          |           |
-| sound            | SND    | SND_ambient_forest_v001.wav   | True      |
-| shape_key        | SPK    | SPK_facial_expressions        |           |
-| text             | TXT    | TXT_credits_final_v001        | True      |
-| widget           | WGT    | WGT_faceControl               |           |
-| world            | WLD    | WLD_studio_lighting_v002      | True      |
+| Type              | Prefix | Example                          | Versioned | Ignore Case | Case       | In Blender |
+|-------------------|--------|----------------------------------|-----------|-------------|------------|------------|
+| action           | ATN    | ATN_walkCycle_v003              | True      | True        | camelCase  | ✓          |
+| armature         | ARM    | ARM_characterRig_v003           | True      |             | camelCase  | ✓          |
+| environnement    | ENV    | ENV_montagneModeling_v004       | True      |             | camelCase  |            |
+| fx               | FX     | None                            |           |             | camelCase  |            |
+| image            | IMG    | IMG_coastSandRocks_diff_2k      |           |             | camelCase_<type>_<n digit>k  | ✓          |
+| lattice          | LAT    | LAT_facialDeform                |           |             | camelCase  | ✓          |
+| library          | LIB    | LIB_matLibShading               |           |             | camelCase  | ✓          |
+| mesh             | MSH    | MSH_buildingWalls               |           |             | camelCase  | ✓          |
+| mask             | MSK    | MSK_selectionHair               |           |             | camelCase  |            |
+| material         | MTL    | MTL_leatherWorn                 |           |             | camelCase  | ✓          |
+| metarig          | MTA    | MTA_bipedStandard               |           |             | camelCase  |            |
+| node_graph       | ND     | NOD_renderSetup                 |           |             | camelCase  |            |
+| palette          | PLT    | PLT_characterColors             |           |             | camelCase  |            |
+| script           | SCT    | SCT_autoBake_v001.py            | True      |             | camelCase  |            |
+| simulation       | SIM    | None                            |           |             | camelCase  |            |
+| sound            | SND    | SND_ambientForest_v001.wav      | True      |             | camelCase  | ✓          |
+| shape_key        | SPK    | SPK_facialExpressions           |           |             | camelCase  | ✓          |
+| text             | TXT    | TXT_creditsFinal_v001           | True      |             | camelCase  | ✓          |
+| widget           | WGT    | WGT_faceControl                 |           |             | camelCase  |            |
+| world            | WLD    | WLD_studioLighting_v002         | True      |             | camelCase  | ✓          |
