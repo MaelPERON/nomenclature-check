@@ -142,7 +142,7 @@ class Foreman:
 			errors["version"] = f"Expected version format 'v###' but got '{self.version or 'None'}'." if self.version else "Version is required for this block type."
 
 		if not self.is_case_valid():
-			errors["case"] = f"Block name '{self.block_name}' does not follow the case convention."
+			errors["case"] = f"Block name '{self.name}' does not follow the case convention."
 
 		is_valid = not bool(errors)
 		return is_valid if quiet else is_valid, errors
