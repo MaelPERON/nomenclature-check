@@ -1,4 +1,4 @@
-RULES = {
+ASSET_RULES = {
     "action": {
         "prefix": "ATN",
         "example": "ATN_walk_cycle_v003",
