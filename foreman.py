@@ -102,3 +102,11 @@ class Foreman:
 			return None			
 
 		return self.prefix == self.block_prefix.upper()
+
+	def get_parts(self):
+		parts = self.block_name.split("_")
+		prefix = parts.pop(0) if self.block_prefix else None
+		version = None if not self.block_versioned else parts.pop(-1)
+		name = "_".join(parts)
+
+		return prefix, name, version
