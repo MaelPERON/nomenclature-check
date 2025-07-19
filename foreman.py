@@ -127,3 +127,22 @@ class Foreman:
 	def is_case_valid(self):
 		case_pattern = r"^[a-zA-Z]+([A-Z][a-z]+)+$"
 		return bool(re.match(case_pattern, self.name))
+	
+	def is_valid(self,quiet=True) -> bool | tuple[bool, dict]:
+		errors = {}
+
+		has_prefix = self.has_prefix()
+		if has_prefix is None:
+			errors["prefix"] = "No prefix defined for this block type."
+		elif not has_prefix:
+			errors["prefix"] = f"Expected prefix '{self.block_prefix}' but got '{self.prefix}'."
+
+		has_version = self.has_version()
+		if has_version is not None and not has_version:
+			errors["version"] = f"Expected version format 'v###' but got '{self.version or "None"}'." if self.version else "Version is required for this block type."
+
+		if not self.is_case_valid():
+			errors["case"] = f"Block name '{self.block_name}' does not follow the case convention."
+
+		is_valid = bool(errors)
+		return is_valid if quiet else is_valid, errors
